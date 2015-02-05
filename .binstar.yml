@@ -48,8 +48,8 @@ script:
 #   - echo "The build was a $BINSTAR_BUILD_RESULT" | tee artifact1.txt
 ## This will be run only after a successfull build
 after_success:
-  # - if [[ "$BINSTAR_ENGINE" == "python=2" ]]; then binstar-build -t $TOKEN - trigger moble/spinsfast; fi
-  - if [[ "$BINSTAR_ENGINE" == "python=2" ]]; then binstar-build -t ~/.binstar_keyfile - trigger moble/spinsfast; fi
+  # - if [[ "$BINSTAR_ENGINE" == "python=2" ]]; then binstar-build -t ${TOKEN} - trigger moble/spinsfast; fi
+  - if [[ "$BINSTAR_ENGINE" == "python=2" ]]; then binstar-build -t $(<~/.binstar_keyfile) - trigger moble/spinsfast; fi
 ## This will be run only after a build failure
 # after_failure:
 #   - echo "after_failure!"
