@@ -37,9 +37,16 @@ engine:
 ## Run before the script
 before_script:
   - conda update -n root conda-build
-#   - if [ "$BINSTAR_ENGINE" == "2" ]; then
-#         conda install -c binstar binstar binstar-build
-#     fi
+  - echo "BINSTAR_ENGINE = _ $BINSTAR_ENGINE _"
+  - if [ "$BINSTAR_ENGINE" == "2" ]; then
+        echo "ENGINE 2"
+    else
+        echo "ENGINE else"
+    fi
+  - exit 1
+  - if [ "$BINSTAR_ENGINE" == "2" ]; then
+        conda install -c binstar binstar binstar-build
+    fi
 ## Put your main computations here!  
 script:
   - conda build .
