@@ -37,7 +37,9 @@ engine:
 ## Run before the script
 before_script:
   - conda update -n root conda-build
-  - conda install -c binstar binstar binstar-build
+#   - if [ "$BINSTAR_ENGINE" == "2" ]; then
+#         conda install -c binstar binstar binstar-build
+#     fi
 ## Put your main computations here!  
 script:
   - conda build .
@@ -46,8 +48,10 @@ script:
 # after_script:
 #   - echo "The build was a $BINSTAR_BUILD_RESULT" | tee artifact1.txt
 ## This will be run only after a successfull build
-after_success:
-  - binstar-build trigger moble/spinsfast
+# after_success:
+#   - if [ "$BINSTAR_ENGINE" == "2" ]; then
+#         binstar-build trigger moble/spinsfast
+#     fi
 ## This will be run only after a build failure
 # after_failure:
 #   - echo "after_failure!"
