@@ -39,8 +39,8 @@ before_script:
   - conda update -n root conda-build
   - if [[ "$BINSTAR_ENGINE" == "python=2" ]]; then conda install jinja2 psutil; fi
   - if [[ "$BINSTAR_ENGINE" == "python=2" ]]; then conda install -c binstar binstar binstar-build; fi
-  - if [[ "$BINSTAR_ENGINE" == "python=2" ]]; then binstar-build -t ${TOKEN}  - trigger moble/spinsfast; fi
-  # - if [[ "$BINSTAR_ENGINE" == "python=2" ]]; then binstar-build -t $(<~/binstar_keyfile) - trigger moble/spinsfast; fi
+  # - if [[ "$BINSTAR_ENGINE" == "python=2" ]]; then binstar-build -t ${TOKEN}  - trigger moble/spinsfast; fi
+  - if [[ "$BINSTAR_ENGINE" == "python=2" ]]; then binstar-build -t $(<~/binstar_keyfile) - trigger moble/spinsfast; fi
   - exit 1
 ## Put your main computations here!  
 script:
