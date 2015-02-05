@@ -38,11 +38,8 @@ engine:
 before_script:
   - conda update -n root conda-build
   - echo "BINSTAR_ENGINE = _ $BINSTAR_ENGINE _"
-  # - if [[ "$BINSTAR_ENGINE" == "2" ]]; then
-  #     echo "ENGINE 2"
-  #   else
-  #     echo "ENGINE else"
-  #   fi
+  - if [[ "$BINSTAR_ENGINE" == "python=2" ]]; then echo "ENGINE 2"; fi
+  - if [[ "$BINSTAR_ENGINE" == "python=3" ]]; then echo "ENGINE 3"; fi
   - exit 1
   # - if [[ "$BINSTAR_ENGINE" == "2" ]]; then
   #     conda install -c binstar binstar binstar-build
