@@ -23,6 +23,13 @@ actually install anything, or make it available publicly.  To make it available
 from [binstar](https://binstar.org/), you need to run the `binstar upload`
 command noted at the end of the output of the `conda build` command.
 
+You should probably also support python 3 if possible.  Activate the python 3
+enviroment, then run, e.g.,
+
+```sh
+conda build --python 3.4 .
+```
+
 You need to do this yourself on OS X.  But to have `binstar` build this itself
 on linux, just run
 
