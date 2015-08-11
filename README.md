@@ -1,8 +1,8 @@
 # fftw
-Simple conda/binstar builder for FFTW
+Simple python conda builder for [FFTW](http://www.fftw.org/)
 
-The resulting conda/binstar packages are available
-[here](https://binstar.org/moble/fftw), and can be installed with
+The resulting conda/anaconda packages are available
+[here](https://anaconda.org/moble/fftw), and can be installed with
 
 ```sh
 conda install -c moble fftw
@@ -10,6 +10,9 @@ conda install -c moble fftw
 
 
 ## How this works
+
+Note: All the following steps are combined in a simple script I keep
+[here](https://github.com/moble/auto_version/blob/master/update_anaconda_org.sh).
 
 A `conda` package can be created from these files by running
 
@@ -20,24 +23,15 @@ conda build .
 This downloads and compiles the code as desired, and packages it all up nicely
 in binary form for use in an anaconda distribution.  However, this doesn't
 actually install anything, or make it available publicly.  To make it available
-from [binstar](https://binstar.org/), you need to run the `binstar upload`
-command noted at the end of the output of the `conda build` command.
+from [anaconda.org](https://anaconda.org/), you need to run the `anaconda
+upload` command noted at the end of the output of the `conda build` command.
 
 You should probably also support python 3 if possible.  Activate the python 3
-enviroment, then run, e.g.,
+environment, then run, e.g.,
 
 ```sh
 conda build --python 3.4 .
 ```
-
-You need to do this yourself on OS X.  But to have `binstar` build this itself
-on linux, just run
-
-```sh
-binstar-build submit .
-```
-
-in the same directory as the `.binstar.yml` file.
 
 Once that has been done, you can go to the web page (listed in the output of
 the previous command) to view the build.  Once that has succeeded, you can
