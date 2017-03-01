@@ -1,11 +1,11 @@
 package:
   name: fftw
-  version: 3.3.5
+  version: 3.3.6
 
 source:
-  fn: fftw-3.3.5.tar.gz
-  md5: 6cc08a3b9c7ee06fdd5b9eb02e06f569
-  url: http://www.fftw.org/fftw-3.3.5.tar.gz
+  fn: fftw-3.3.6-pl1.tar.gz
+  md5: 682a0e78d6966ca37c7446d4ab4cc2a1
+  url: http://www.fftw.org/fftw-3.3.6-pl1.tar.gz
 
 build:
   detect_binary_files_with_prefix: true
