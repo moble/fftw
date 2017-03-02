@@ -5,14 +5,8 @@ language: python
 matrix:
   include:
     - os: linux
-      python: '2.7'
-      env: CONDA=true
-    - os: linux
       python: '3.6'
       env: CONDA=true
-    - os: osx
-      language: generic
-      env: CONDA=true TRAVIS_PYTHON_VERSION=2.7
     - os: osx
       language: generic
       env: CONDA=true TRAVIS_PYTHON_VERSION=3.6
