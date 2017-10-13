@@ -10,6 +10,10 @@ source:
 build:
   detect_binary_files_with_prefix: true
 
+requirements:
+  build:
+    - python {{ python }}
+
 about:
   home: 'http://www.fftw.org/'
   license: GPL
